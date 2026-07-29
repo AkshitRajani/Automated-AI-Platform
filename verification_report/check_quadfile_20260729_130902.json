@@ -1,0 +1,195 @@
+{
+  "run": "check_quadfile",
+  "when": "20260729_130902",
+  "results": [
+    {
+      "check": "file parses",
+      "status": "PASS",
+      "summary": ".\\.platform_runs\\quads\\TICTACTOE.yaml",
+      "data": {}
+    },
+    {
+      "check": "analyzer version",
+      "status": "INFO",
+      "summary": "produced by analyzer 3.4.2",
+      "data": {}
+    },
+    {
+      "check": "what this run read",
+      "status": "PASS",
+      "summary": "python 1/1 \u00b7 workflows 0 \u00b7 terraform 0 \u00b7 java 0 \u00b7 config-SQL 0 \u00b7 zips NOT opened 0",
+      "data": {
+        "manifest": {
+          "python_files_found": 1,
+          "python_files_parsed": 1,
+          "python_files_unparseable": 0,
+          "workflow_files_parsed": 0,
+          "terraform_files_found": 0,
+          "java_files_found": 0,
+          "config_files_with_sql": 0,
+          "zip_files_not_opened": 0
+        },
+        "analyzer_notes": []
+      }
+    },
+    {
+      "check": "entities",
+      "status": "PASS",
+      "summary": "12 total \u2014 Function:11, Module:1",
+      "data": {
+        "Function": 11,
+        "Module": 1
+      }
+    },
+    {
+      "check": "facts",
+      "status": "PASS",
+      "summary": "23 total across 2 relationship kinds",
+      "data": {
+        "DEFINES": 11,
+        "CALLS": 12
+      }
+    },
+    {
+      "check": "journeys walked",
+      "status": "WARN",
+      "summary": "0 journeys + 0 behavior families \u2014 ZERO journeys: the app may be all small behaviors, or the graph has no walkable chains (send this report)",
+      "data": {}
+    },
+    {
+      "check": "repo-declared answers",
+      "status": "INFO",
+      "summary": "0 bindings harvested from the repo",
+      "data": {}
+    },
+    {
+      "check": "web calls (outbound APIs)",
+      "status": "INFO",
+      "summary": "0 distinct outside address(es) the code calls \u2014 none found in the code",
+      "data": {
+        "addresses": []
+      }
+    },
+    {
+      "check": "secrets read (names only)",
+      "status": "INFO",
+      "summary": "0 secret name(s) the code fetches \u2014 the names only; secret VALUES are never read or stored",
+      "data": {
+        "secrets": []
+      }
+    },
+    {
+      "check": "parameters read",
+      "status": "INFO",
+      "summary": "0 parameter-store name(s) the code fetches",
+      "data": {
+        "parameters": []
+      }
+    },
+    {
+      "check": "notifications published",
+      "status": "INFO",
+      "summary": "0 notification topic(s) the code publishes to",
+      "data": {
+        "topics": []
+      }
+    },
+    {
+      "check": "database tables",
+      "status": "INFO",
+      "summary": "0 distinct table(s) \u2014 0 read, 0 written \u2014 no SQL found in code or config",
+      "data": {
+        "read": [],
+        "written": [],
+        "from_config_files": [],
+        "config_files": []
+      }
+    },
+    {
+      "check": "bucket names readable",
+      "status": "PASS",
+      "summary": "0 of 0 storage fact(s) carry a real, readable object name (0 distinct bucket(s))",
+      "data": {
+        "buckets": [],
+        "unreadable": []
+      }
+    },
+    {
+      "check": "lambda code links",
+      "status": "INFO",
+      "summary": "no lambdas declared in this upload",
+      "data": {}
+    },
+    {
+      "check": "environment",
+      "status": "INFO",
+      "summary": "single-environment upload \u2014 no competing settings files",
+      "data": {}
+    },
+    {
+      "check": "lambda names confirmed",
+      "status": "INFO",
+      "summary": "no terraform-declared lambda names in this upload",
+      "data": {}
+    },
+    {
+      "check": "placeholders",
+      "status": "PASS",
+      "summary": "0 unresolved facts; 0 distinct ${} tokens \u2014 nothing needs the name checkpoint",
+      "data": {
+        "tokens": []
+      }
+    },
+    {
+      "check": "blocked or complete",
+      "status": "PASS",
+      "summary": "COMPLETE \u2014 every name is answered or decided; journeys were computed",
+      "data": {}
+    },
+    {
+      "check": "human-supplied answers",
+      "status": "INFO",
+      "summary": "0 name(s) supplied by a person, producing 0 human-stamped fact(s) \u2014 each is marked so it can never be mistaken for something the code said",
+      "data": {
+        "answers": {},
+        "facts": []
+      }
+    },
+    {
+      "check": "skip / runtime decisions",
+      "status": "INFO",
+      "summary": "none \u2014 no name was skipped",
+      "data": {}
+    },
+    {
+      "check": "worksheet warnings",
+      "status": "PASS",
+      "summary": "0 operator-sheet issue(s) \u2014 the answer sheets are consistent",
+      "data": {
+        "warnings": []
+      }
+    },
+    {
+      "check": "needs wiring",
+      "status": "WARN",
+      "summary": "1 journey-shaped fragment(s) that no front door reaches \u2014 held for review, NOT promoted to journeys: Module:.",
+      "data": {
+        "unwired": [
+          "Module:."
+        ]
+      }
+    },
+    {
+      "check": "app id",
+      "status": "INFO",
+      "summary": "TICTACTOE",
+      "data": {}
+    },
+    {
+      "check": "ready to ingest",
+      "status": "PASS",
+      "summary": "READY TO INGEST \u2014 with known, visible holes: 1 needs-wiring fragment(s)",
+      "data": {}
+    }
+  ]
+}

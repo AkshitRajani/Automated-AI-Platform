@@ -1,0 +1,24 @@
+{
+  "LN_INTRM_TM_SERS_DATA_PREP_SPST.sql": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "generated_at": "2026-04-30T13:57:54+00:00",
+    "generated_by": "scripts/parquet_to_ddl.py",
+    "replace_when": "the tenant ships canonical CREATE TABLE DDL (drop into ../delivered/)",
+    "sha256": "8ee5b98ed3481e81f47e555810bac81eb27570544c799f638af442d21946d687",
+    "size_bytes": 3922,
+    "source_artifact": "<source>/data/inputs/all_loans.parquet"
+  },
+  "LN_TM_SERS_MBS4PLUS.sql": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "generated_at": "2026-04-30T13:57:54+00:00",
+    "generated_by": "scripts/parquet_to_ddl.py",
+    "replace_when": "the tenant ships canonical CREATE TABLE DDL (drop into ../delivered/)",
+    "sha256": "0e1803e2e0c1004b05c10607a0644c353dcb92d199b8761bbd2d0ea6efe9f6ce",
+    "size_bytes": 1096,
+    "source_artifact": "<source>/data/expected/LN_TM_SERS_MBS4PLUS.parquet"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "unit": "WorkflowFile:late_fee_job",
+  "unit_type": "WorkflowFile",
+  "title": "Late fee job",
+  "provenance": "code-derived",
+  "requirement_backed": false,
+  "sections": {
+    "System Overview": "Applies late fees to overdue accounts.",
+    "Input Specification": "| Data Source | Field | Type | Purpose | Example |",
+    "Consolidated Requirements": "- The system shall apply a late fee when payment is overdue beyond the grace period.\n- The system shall not apply a late fee within the grace period.",
+    "Output Specification": "Updated account balance.",
+    "Function Specification": "| Function | Purpose |",
+    "User Stories": "### US-1 Late fee application (Story Points: 3)\n_As a billing operator, I want late fees applied correctly._\n\n1. **Given** an account with payment due 20 days ago **When** the late fee job runs **Then** a 5% late fee is applied to the balance `[code-derived]`\n2. **Given** an account with payment due 5 days ago **When** the late fee job runs **Then** no late fee is applied to the balance `[code-derived]`\n3. **Given** an overdue account **When** an admin waives the late fee **Then** the account balance has no late fee charge `[code-derived]` _(negative path)_",
+    "Traceability Matrix": "| Category | Functions | Story |",
+    "Confidence Mapping": "| Tag | Confidence | Story | Explanation |",
+    "Gap Analysis": "Coverage complete for late fee paths."
+  }
+}

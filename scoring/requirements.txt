@@ -1,0 +1,15 @@
+# Scoring runtime deps (only packages actually used).
+#
+# Full install (Bedrock agent + regex):
+#   python -m pip install --upgrade pip
+#   pip install -r requirements.txt
+#
+# Regex-only (no Bedrock / no strands):
+#   pip install -r requirements-core.txt
+#   Set SCORING_PROFILING_MODE=regex in scoring/scoring/.env
+#
+# Python 3.12+ (3.12 and 3.13 supported).
+
+strands-agents>=0.1    # Agent + BedrockModel (import: strands)
+boto3>=1.28            # AWS / Bedrock transport used by Strands
+pydantic>=2.0          # agent schemas / structured output

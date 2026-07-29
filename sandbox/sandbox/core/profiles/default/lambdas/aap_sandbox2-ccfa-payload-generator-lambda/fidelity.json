@@ -1,0 +1,19 @@
+{
+  "tier": "L3",
+  "source": "tenant/knowledge/reference_corrections/ccfa_handler_10_of_10/output.feature",
+  "source_suite": "reference_10_of_10",
+  "verified": "2026-05-04",
+  "input_schema": {
+    "required_fields": ["submission_data"],
+    "optional_fields": ["context", "metadata"],
+    "types": {
+      "submission_data": "object"
+    }
+  },
+  "error_responses": {
+    "missing_field":  {"statusCode": 400, "error": "Missing required keys in event"},
+    "unknown_field":  {"statusCode": 400, "error": "Unexpected key in event"},
+    "type_mismatch":  {"statusCode": 400, "error": "Type mismatch in event"}
+  },
+  "notes": "Validates top-level event shape ({submission_data: {...}}). Inner submission_data field validation deferred — the reference tests inspect the lambda's downstream effects (DDB writes, payload-shape transforms), not the rejection path on inner-key mismatches. The 200-success output matches the reference output.feature scenarios: stressOnly transformation, unique_id generation, api_payload JSON-string storage."
+}

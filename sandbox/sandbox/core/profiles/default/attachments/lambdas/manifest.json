@@ -1,0 +1,452 @@
+{
+  "aap_sandbox-ccfa-payload-generator-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "6feb86b75a03b9481157c2cc5154d68a6f1c78a397a0fb6d482c013ed470453f",
+    "size_bytes": 3831,
+    "source_suite": "ccfa_reference",
+    "tier": "L1",
+    "tier_kind": "reference"
+  },
+  "aap_sandbox-ccfa-post-processing-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "657263ab1a62ecf949587e62a005a507800238706fd71d9dccd7c7b39244c357",
+    "size_bytes": 3833,
+    "source_suite": "ccfa_reference",
+    "tier": "L1",
+    "tier_kind": "reference"
+  },
+  "aap_sandbox-ccfa-pre-processing-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "fe7bebb318fdf2adf03a1463b9718a6210fe2b70fa02e143f452700969084f98",
+    "size_bytes": 3833,
+    "source_suite": "ccfa_reference",
+    "tier": "L1",
+    "tier_kind": "reference"
+  },
+  "aap_sandbox-ccfa-response-handler.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "19afe6252734bcf009cee47dbf7e54039ec15f3ffe40ef28249608f81843486d",
+    "size_bytes": 3831,
+    "source_suite": "ccfa_reference",
+    "tier": "L1",
+    "tier_kind": "reference"
+  },
+  "aap_sandbox-ccfa-status-handler-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "82f4f20848e5122219fb4b48d08187bce607d5dc69efc989985f81976d0c8ff6",
+    "size_bytes": 3832,
+    "source_suite": "ccfa_reference",
+    "tier": "L1",
+    "tier_kind": "reference"
+  },
+  "aap_sandbox2-ccfa-payload-generator-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json",
+      "input_example.json",
+      "output_example.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "1535a7ad0bba54cc54bd94ee3d11214e0e9326d3cbdd4a9f3da1f718694c1366",
+    "size_bytes": 5110,
+    "source_suite": "reference_10_of_10",
+    "tier": "L3",
+    "tier_kind": "reference"
+  },
+  "gu2-f3-poc-extra-statemachine-details.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "f2ad8dcf2f14ff7db301ca53ae469d0095166b044fd5a5b5d761c204fb4c5cce",
+    "size_bytes": 3843,
+    "source_suite": "gitlab_8232",
+    "tier": "L1",
+    "tier_kind": "reference"
+  },
+  "gu2-unitTest.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "58b1f1a189a37c11de5303ac1e8c37001e18af206d571b4088ab8c17bf24af8c",
+    "size_bytes": 3827,
+    "source_suite": "gitlab_8232",
+    "tier": "L1",
+    "tier_kind": "reference"
+  },
+  "hlx-aap_sandbox-backbone-metadata-api-input.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "70bed99b932101e466cf92c83a751eb7b06afffa548292c49a5470995ea856e0",
+    "size_bytes": 3710,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-common-code.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "6eb10fb21b5112d4fbee1e2212bd8a256eb00fc749012ceefd1e6af2d8681b5c",
+    "size_bytes": 3700,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-controller-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "b756bd42d0d4eab5dd52c4bd666a9b9fb41ed368ddc3c5678c8c49c38bee5cca",
+    "size_bytes": 3700,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-db-restart.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "1fad3dd74ff99bef4b1b7365ae81931fb9859376540e7bd1b7471e9c2a5a77d9",
+    "size_bytes": 3699,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-acquire-slot-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "831da86c3cbd99a61e458c277761bbbe885a65ac16ce2966f11a432c43b577a5",
+    "size_bytes": 3708,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-add-to-queue-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "f080c34a307d63d97a3ff3aafb0151f57078be342689b75dcf24fbc0b08ae576",
+    "size_bytes": 3708,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-check-all-requests-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "69a94c1b5bb48854634dca50487b8c17414565c6ef1582559a1a41feb80f1469",
+    "size_bytes": 3712,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-cleanup-marked-queue-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "af44fed5f93cff7c88de0218a02650a96cd3f11d182e640b648d3bd14de45085",
+    "size_bytes": 3713,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-dynamodb-cleanup-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "8818675f20d5287ce829bd35add5105035a53f2e3228797bf83bdb218c2c9c74",
+    "size_bytes": 3711,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-lock-handler-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "dbfeabb7d4610936fbeb6c80dacb270ab51a9c4f7e2b3b070b9870e04d9df69f",
+    "size_bytes": 3707,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-release-slot-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "35a9fbb457f17b08d12795aff8820dfd23494d5f2f8a4ec86818bf84b6f8fe59",
+    "size_bytes": 3707,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-generic-request-delay-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "4081b4ef243e62d7496b926e11fe52f444072ba7e1761416a81d498f2dff452c",
+    "size_bytes": 3709,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-klc-payload-generator.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "ee3cfbe1406163951aea2d519c591115c989d606bd0c392d918ae8f9a912cc99",
+    "size_bytes": 3708,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-klc-response-handler.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "faa249cdd56cca08b4e3eccfe2252540f4b283abf8872d0877add0ecc3fc0e9f",
+    "size_bytes": 3708,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-klc-status-handler.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "394dac7d7ababfae97c6d6dab0d25ec7b62d1f33ce8b7357610abf87b3d096f5",
+    "size_bytes": 3706,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-postprocessing-status-handler.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "830040a9c867d7b222e5e0e76cd81d4d06803b536607a9ff3c6e2a4a72c2a336",
+    "size_bytes": 3713,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-service-backbone-manager-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "d9e1f7b266f015dfb338033cfd29dc2a0d94a199ce43ba7b5d847fa6f454f846",
+    "size_bytes": 3711,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-service-check-api-status-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "7fa6ac29623a183294ebe832dacf8701c85372484e1d3fe7ddf41ff13f56b62b",
+    "size_bytes": 3711,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-service-check-orchestration-scenarios-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "401523fb30e1d0576af39c0ba1104ae295109b6930be2b9bf0ee4985f54653d3",
+    "size_bytes": 3719,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  },
+  "hlx-aap_sandbox-service-check-orchestration-ui-lambda.zip": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "fixtures_bundled": [
+      "fidelity.json"
+    ],
+    "generated_at": "2026-05-04T18:46:05+00:00",
+    "generated_by": "scripts/build_lambda_stubs.py",
+    "replace_when": "the tenant ships real handler.zip (ask_f new item)",
+    "sha256": "18b0242c84b1c38a5494c6c80cd133cb32752a115f19c80d6c9a45c9ec637c46",
+    "size_bytes": 3715,
+    "source_suite": null,
+    "tier": "L1",
+    "tier_kind": "core"
+  }
+}

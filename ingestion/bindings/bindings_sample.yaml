@@ -1,0 +1,10 @@
+# Sample bindings — the "answer sheet" that turns ${placeholder} names into real names.
+# Copy this file, fill in the real values from your deployment/config, and point
+# PARAM_BINDINGS_SOURCE at this folder. A human's answer here always wins over
+# anything the repo declared. These are FAKE example values.
+
+# token (exactly as it appears as ${token} in the facts)   :   real value
+MY_TABLE.glue_database_name: analytics_prod_db
+MY_TABLE.glue_table_name: my_table
+CURATED_BUCKET: my-app-curated-bucket
+LANDING_BUCKET: my-app-landing-bucket

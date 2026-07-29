@@ -1,0 +1,255 @@
+{
+  "sandbox_id": "41bc291997f8fabc85f5838bfed58e4c2253f662e37e1dafaad97851390b8ad5",
+  "profile_dir": "<sandbox_root>/core/profiles/default",
+  "tenant": "tenant",
+  "snapshot_date": "2026-04-30",
+  "spec_version": "1.0",
+  "endpoints": {
+    "localstack": "http://localhost:4566",
+    "microcks": "http://localhost:8080",
+    "postgres": "postgresql://postgres:postgres@127.0.0.1:5433/aap_sandbox"
+  },
+  "counts": {
+    "lambdas": 28,
+    "lambdas_core": 20,
+    "lambdas_reference": 8,
+    "step_functions": 2,
+    "dynamodb_tables": 1,
+    "s3_buckets": 2,
+    "glue_jobs": 1,
+    "behavioral_contracts": 2,
+    "business_rules": 5,
+    "tickets": 5
+  },
+  "lambda_roster": [
+    {
+      "name": "hlx-aap_sandbox-backbone-metadata-api-input",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-common-code",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-controller-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-db-restart",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-acquire-slot-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-add-to-queue-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-check-all-requests-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-cleanup-marked-queue-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-dynamodb-cleanup-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-lock-handler-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-release-slot-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-generic-request-delay-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-klc-payload-generator",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-klc-response-handler",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-klc-status-handler",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-postprocessing-status-handler",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-service-backbone-manager-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-service-check-api-status-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-service-check-orchestration-scenarios-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "hlx-aap_sandbox-service-check-orchestration-ui-lambda",
+      "tier": "L1",
+      "source": "default",
+      "tier_kind": "core",
+      "source_suite": null,
+      "fixture_dir": null
+    },
+    {
+      "name": "gu2-unitTest",
+      "tier": "L1",
+      "source": "no_tenant_material_yet",
+      "tier_kind": "reference",
+      "source_suite": "gitlab_8232",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/gu2-unitTest"
+    },
+    {
+      "name": "gu2-f3-poc-extra-statemachine-details",
+      "tier": "L1",
+      "source": "no_tenant_material_yet",
+      "tier_kind": "reference",
+      "source_suite": "gitlab_8232",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/gu2-f3-poc-extra-statemachine-details"
+    },
+    {
+      "name": "aap_sandbox-ccfa-pre-processing-lambda",
+      "tier": "L1",
+      "source": "no_tenant_material_yet",
+      "tier_kind": "reference",
+      "source_suite": "ccfa_reference",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/aap_sandbox-ccfa-pre-processing-lambda"
+    },
+    {
+      "name": "aap_sandbox-ccfa-payload-generator-lambda",
+      "tier": "L1",
+      "source": "no_tenant_material_yet",
+      "tier_kind": "reference",
+      "source_suite": "ccfa_reference",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/aap_sandbox-ccfa-payload-generator-lambda"
+    },
+    {
+      "name": "aap_sandbox2-ccfa-payload-generator-lambda",
+      "tier": "L3",
+      "source": "tenant/knowledge/reference_corrections/ccfa_handler_10_of_10/output.feature",
+      "tier_kind": "reference",
+      "source_suite": "reference_10_of_10",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/aap_sandbox2-ccfa-payload-generator-lambda"
+    },
+    {
+      "name": "aap_sandbox-ccfa-response-handler",
+      "tier": "L1",
+      "source": "no_tenant_material_yet",
+      "tier_kind": "reference",
+      "source_suite": "ccfa_reference",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/aap_sandbox-ccfa-response-handler"
+    },
+    {
+      "name": "aap_sandbox-ccfa-status-handler-lambda",
+      "tier": "L1",
+      "source": "no_tenant_material_yet",
+      "tier_kind": "reference",
+      "source_suite": "ccfa_reference",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/aap_sandbox-ccfa-status-handler-lambda"
+    },
+    {
+      "name": "aap_sandbox-ccfa-post-processing-lambda",
+      "tier": "L1",
+      "source": "no_tenant_material_yet",
+      "tier_kind": "reference",
+      "source_suite": "ccfa_reference",
+      "fixture_dir": "<sandbox_root>/core/profiles/default/lambdas/aap_sandbox-ccfa-post-processing-lambda"
+    }
+  ],
+  "fidelity_summary": {
+    "L3": 1,
+    "L2": 0,
+    "L1": 27
+  }
+}

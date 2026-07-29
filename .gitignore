@@ -1,0 +1,40 @@
+# Python
+.venv/
+**/.venv/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.deepeval/
+*.egg-info/
+dist/
+build/
+
+# Node
+**/node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Secrets — keep *.example; never commit real env
+.env
+**/.env
+!.env.example
+!**/.env.example
+
+# Runtime / local artifacts
+.platform_runs/
+score_report.json
+score_report.html
+*.log
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Archives / local sample apps (do not ship in this repo)
+*.zip
+SmartImageRepository/
+**/SmartImageRepository-master/

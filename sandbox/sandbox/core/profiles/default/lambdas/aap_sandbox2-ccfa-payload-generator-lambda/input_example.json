@@ -1,0 +1,14 @@
+{
+  "submission_data": {
+    "subprocess_id": "SUBPROCESS-67890",
+    "forecast_date": "2025-01-15",
+    "scenario_id": "API_Payload_Validation",
+    "hpfa_path": "s3://bucket/path/to/hpfa/data",
+    "jumpoff_date": "2025-01-15",
+    "jumpoff_date_last_business_day": "2025-01-14",
+    "stress_toggle": "True",
+    "submission_name": "stress_test_jan2025",
+    "Econ_cfg_Interest_Rates_proscribed_rate_file": "s3://bucket/path/to/rates.is",
+    "Econ_cfg_Interest_Rates_VNML": "s3://aap_sandbox-devl-fcdl-us-east-1/insight/cin/dflt/DSET00030758/ECON_CFG/Interest_Rates/VNML/V1/CF_Econ_No_Shock.xml"
+  }
+}

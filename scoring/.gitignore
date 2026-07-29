@@ -1,0 +1,13 @@
+# Local / generated
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.deepeval/
+scoring/.profile_cache/
+demo_suites/reports/
+
+# Secrets — never commit
+scoring/.env
+.env
+*.pem

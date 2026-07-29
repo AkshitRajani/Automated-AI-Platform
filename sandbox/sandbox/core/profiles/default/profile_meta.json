@@ -1,0 +1,6 @@
+{
+  "display_name": "Default Tenant",
+  "client_code": "default",
+  "is_demo": false,
+  "features": ["sandbox", "gherkin_tests"]
+}

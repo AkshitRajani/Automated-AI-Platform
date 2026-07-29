@@ -1,0 +1,21 @@
+actions:
+  - action: EXTRACT
+    name: read_loans
+    dataframe: loans
+    readFormat: sql
+    dataBackbone: name=LOAN_SPST:scenario=${scenario_id}
+    sql: select id, upb from ${LOAN_SPST.glue_database_name}.${LOAN_SPST.glue_table_name}
+  - action: MERGE
+    name: enrich_loans
+    dataframe: loans_enriched
+    sql: select a.* from loans a join ref b on a.id=b.id
+  - action: EXECUTE
+    name: run_calc
+    customFunction: compute_risk
+  - action: LOAD
+    name: write_result
+    dataframe: loans_enriched
+    dataBackbone: name=RESULT_SPST
+    table: ${RESULT_SPST.glue_table_name}
+    dataS3Bucket: ${RESULT_SPST.s3_bucket}
+    dataS3Prefix: results/${scenario_id}/

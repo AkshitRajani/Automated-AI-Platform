@@ -1,0 +1,22 @@
+# Local Automated AI Platform infrastructure (KB Postgres). Sandbox stack is started separately
+# from sandbox/sandbox/core (LocalStack + Microcks + app Postgres on 5433).
+services:
+  kb-postgres:
+    image: pgvector/pgvector:pg16
+    container_name: aap_kb_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: knowledge_base
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - aap_kb_pgdata:/var/lib/postgresql/data
+      - ./ingestion/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d knowledge_base"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+volumes:
+  aap_kb_pgdata:

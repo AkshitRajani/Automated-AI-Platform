@@ -1,0 +1,7 @@
+# Coding Agent — client-approved stack only.
+# No LangChain / LangGraph / LlamaIndex / Anthropic SDK direct.
+strands-agents>=0.1
+strands-agents-tools>=0.1
+pydantic>=2.0
+psycopg2-binary>=2.9   # shared with ingestion — Postgres facts (kb_query)
+boto3>=1.28            # shared with ingestion — Neptune read (kb_graph), Bedrock transport

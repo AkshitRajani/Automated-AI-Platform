@@ -1,0 +1,4 @@
+{
+  "framework": "behave",
+  "scope": { "app_id": "your_app" }
+}

@@ -1,0 +1,50 @@
+{
+  "cal.dispatcher.js": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "generated_at": "2026-04-30T15:03:34+00:00",
+    "generated_by": "human, hand-written from real evidence (see source_artifact)",
+    "guess_level": "n/a \u2014 dispatcher is mock behavior we own (the tenant won't ship dispatchers)",
+    "replace_when": "Never (permanent stub). Update if delivered/cal.openapi.yaml adds new states/examples.",
+    "sha256": "94756bb7816bc52745c84bb2b3dca391cea45f96b4b713e004cf31ff34eaf248",
+    "size_bytes": 4355,
+    "source_artifact": "Microcks kvStore TTL pattern + payload.txt async submission/polling structure"
+  },
+  "cal.openapi.yaml": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "generated_at": "2026-04-30T15:03:34+00:00",
+    "generated_by": "human, hand-written from real evidence (see source_artifact)",
+    "guess_level": "medium \u2014 request fields observed; URL paths and async semantics conventional",
+    "replace_when": "ask_f P0.3 ships real CAL OpenAPI 3.x",
+    "sha256": "011d9a813829c933a5977f18357930895d118cf8ffb7dc3f35710b68b5ab0ccf",
+    "size_bytes": 8390,
+    "source_artifact": "<source>/payload.txt (Step Function CAL submission payloads)"
+  },
+  "dbm.dispatcher.js": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "generated_at": "2026-04-30T15:03:34+00:00",
+    "generated_by": "human, hand-written from real evidence (see source_artifact)",
+    "guess_level": "n/a \u2014 dispatcher is mock behavior we own (the tenant won't ship dispatchers)",
+    "replace_when": "Never (permanent stub). Update if delivered/dbm.openapi.yaml adds new examples.",
+    "sha256": "81799b12e996a3926a7804278bfd20e53fbdc46ffbf61e55ba541d85fcb9537f",
+    "size_bytes": 3516,
+    "source_artifact": "Microcks SCRIPT dispatcher pattern; catalog from ccfa_tv_load + mb4.yml table refs"
+  },
+  "dbm.openapi.yaml": {
+    "active_source": "generated",
+    "delivered_at": null,
+    "delivered_sha256": null,
+    "generated_at": "2026-04-30T15:03:34+00:00",
+    "generated_by": "human, hand-written from real evidence (see source_artifact)",
+    "guess_level": "low \u2014 response shape directly observed; request shape conventional",
+    "replace_when": "ask_f P0.2 ships real DBM OpenAPI 3.x",
+    "sha256": "ec0a5fe15f8c80d5a5711c8d5ceae3473db411349870bf4d5ecbd4d4705526c6",
+    "size_bytes": 6794,
+    "source_artifact": "2025/bdd-test-agent/kb/gitlab/yaml/ccfa_tv_load_yml_metadata_ingest.json (dataBackbone references) + mb4.yml (${X.s3_bucket} substitutions)"
+  }
+}

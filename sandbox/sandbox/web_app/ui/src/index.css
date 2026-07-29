@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+@theme {
+  --color-bg:        #0b0d10;
+  --color-bg-soft:   #11141a;
+  --color-bg-elev:   #161a22;
+  --color-fg:        #e6e9ef;
+  --color-fg-soft:   #9aa3b2;
+  --color-fg-mute:   #5b6473;
+  --color-line:      #1f2530;
+  --color-line-soft: #161a22;
+  --color-accent:    #2dd4bf;
+  --color-accent-soft: #14b8a6;
+  --color-warn:      #f59e0b;
+  --color-error:     #ef4444;
+  --color-ok:        #22c55e;
+
+  --font-sans: "Inter var", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+}
+
+html, body, #root { height: 100%; }
+body { font-family: var(--font-sans); }
+
+/* React Flow theming overrides — make it feel like ours, not theirs. */
+.react-flow {
+  --xy-background-color: var(--color-bg);
+  --xy-background-pattern-dots-color: var(--color-line);
+  --xy-edge-stroke: var(--color-fg-mute);
+  --xy-edge-stroke-selected: var(--color-accent);
+  --xy-controls-button-background-color: var(--color-bg-elev);
+  --xy-controls-button-color: var(--color-fg-soft);
+  --xy-controls-button-border-color: var(--color-line);
+}
+.react-flow__edge-path { stroke-width: 1.25; }
+.react-flow__edge.animated .react-flow__edge-path { stroke: var(--color-accent); }
+.react-flow__attribution { display: none; }
+
+/* Markdown rendering for ArchitectureView */
+.markdown-body h1 { font-size: 22px; font-weight: 600; margin: 0.6em 0 0.4em; color: var(--color-fg); }
+.markdown-body h2 { font-size: 17px; font-weight: 600; margin: 1.2em 0 0.4em; color: var(--color-fg); border-bottom: 1px solid var(--color-line); padding-bottom: 4px; }
+.markdown-body h3 { font-size: 14px; font-weight: 600; margin: 1em 0 0.3em; color: var(--color-fg); }
+.markdown-body h4 { font-size: 13px; font-weight: 600; margin: 0.8em 0 0.3em; color: var(--color-fg-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+.markdown-body p  { margin: 0.5em 0; color: var(--color-fg-soft); }
+.markdown-body strong { color: var(--color-fg); font-weight: 600; }
+.markdown-body em { color: var(--color-fg); }
+.markdown-body a  { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; }
+.markdown-body ul, .markdown-body ol { margin: 0.4em 0 0.6em 1.4em; color: var(--color-fg-soft); }
+.markdown-body li { margin: 0.2em 0; }
+.markdown-body code { font-family: var(--font-mono); font-size: 11.5px; background: var(--color-bg-soft); border: 1px solid var(--color-line); border-radius: 4px; padding: 1px 5px; color: var(--color-accent); }
+.markdown-body pre  { background: var(--color-bg-soft); border: 1px solid var(--color-line); border-radius: 8px; padding: 12px 14px; overflow: auto; margin: 0.6em 0; }
+.markdown-body pre code { background: transparent; border: 0; padding: 0; color: var(--color-fg-soft); }
+.markdown-body blockquote { border-left: 2px solid var(--color-accent-soft); padding: 0 12px; color: var(--color-fg-soft); margin: 0.6em 0; }
+.markdown-body table { width: 100%; border-collapse: collapse; margin: 0.6em 0; font-size: 12px; }
+.markdown-body th, .markdown-body td { border: 1px solid var(--color-line); padding: 6px 10px; text-align: left; }
+.markdown-body th { background: var(--color-bg-soft); color: var(--color-fg); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; font-size: 10.5px; }
+.markdown-body td { color: var(--color-fg-soft); }
+.markdown-body hr { border: 0; border-top: 1px solid var(--color-line); margin: 1.2em 0; }
+
+/* Subtle scrollbar */
+* { scrollbar-width: thin; scrollbar-color: var(--color-line) transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--color-fg-mute); }

@@ -1,0 +1,6 @@
+{
+  "tier": "L1",
+  "source": "no_tenant_material_yet",
+  "verified": "2026-05-04",
+  "notes": "Reference-tier lambda. Echo stub. Resolves the name so test bundles invoking it don't 404; returns {} (per locked decision: L1 returns no body). Promote to L2/L3 when the tenant ships payload material."
+}

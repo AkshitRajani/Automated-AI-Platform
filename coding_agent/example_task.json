@@ -1,0 +1,13 @@
+{
+  "ticket_id": "ETSAPS-1",
+  "ticket_text": "Charge a 5% late fee when a payment is more than 15 days overdue.",
+  "diff": "--- a/late_fee.py\n+++ b/late_fee.py\n@@\n+def late_fee(payment):\n+    if payment.days_overdue > 15:\n+        return payment.amount * 0.05\n+    return 0\n",
+  "framework": "behave",
+  "scope": {
+    "app_id": "APP",
+    "environment": null,
+    "code_version": null,
+    "config_snapshot": null
+  },
+  "workspace_dir": "/tmp/coding_agent_ws/ETSAPS-1"
+}

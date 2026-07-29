@@ -1,0 +1,8 @@
+# Requirement Agent — runtime deps.
+# The agentic run needs Strands + Bedrock (same stack as the coding agent);
+# the gates, facts loader, schemas, and renderer are pure stdlib + pydantic + pyyaml.
+strands-agents
+strands-agents-tools
+boto3
+pydantic>=2
+pyyaml
