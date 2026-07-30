@@ -499,6 +499,12 @@ def analyze(app_dir: str, app_id: str, only=None, names_dir=None,
     # an explicit parameter (CLI flag / API field) beats the worksheet entry
     env_file = env_file or sheet_answers.get("environment_file")
 
+    # Single-file app_dir: os.path.relpath(file, file) degenerates to "." (extract.py
+    # bug found analyzing eval/examples/discount/sut.py directly — every entity's
+    # qualified name collapsed to "..funcname"). Use the parent directory as the
+    # relpath base so a single file yields its own basename instead.
+    rel_base = os.path.dirname(app_dir) if os.path.isfile(app_dir) else app_dir
+
     keep = None
     files = discover(app_dir)
     if only:
@@ -520,7 +526,7 @@ def analyze(app_dir: str, app_id: str, only=None, names_dir=None,
     symbols: Dict[str, Set[str]] = {}
     defs_by_file: Dict[str, list] = {}
     for path in files:
-        rel = os.path.relpath(path, app_dir)
+        rel = os.path.relpath(path, rel_base)
         try:
             with open(path, encoding="utf-8", errors="replace") as fh:
                 tree = ast.parse(fh.read(), filename=path)
@@ -563,7 +569,7 @@ def analyze(app_dir: str, app_id: str, only=None, names_dir=None,
     for path in discover(app_dir, exts=(".yml", ".yaml")):
         if keep is not None and os.path.realpath(path) not in keep:
             continue
-        rel = os.path.relpath(path, app_dir)
+        rel = os.path.relpath(path, rel_base)
         try:
             with open(path, encoding="utf-8", errors="replace") as fh:
                 doc = yaml.safe_load(fh)
@@ -608,7 +614,7 @@ def analyze(app_dir: str, app_id: str, only=None, names_dir=None,
     for path in discover(app_dir, exts=(".json", ".yml", ".yaml", ".sql")):
         if keep is not None and os.path.realpath(path) not in keep:
             continue
-        rel = os.path.relpath(path, app_dir)
+        rel = os.path.relpath(path, rel_base)
         try:
             with open(path, encoding="utf-8", errors="replace") as fh:
                 raw = fh.read()
