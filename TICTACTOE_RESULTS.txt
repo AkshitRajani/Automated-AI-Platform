@@ -1,0 +1,311 @@
+﻿
+=== 1/11 main ===
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    3 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 72 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [PASS] gate 6  Catches a planted bug  caught 8/8 planted bug(s)
+  [PASS] gate 7  Stable                 identical verdict across 3 run(s)
+
+DELIVER ΓÇö all gates passed (evidence: 8 mutants caught, 72 lines covered)
+
+=== 2/11 intro ===
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    2 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 6 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_intro_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6
+
+=== 3/11 create_grid ===
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+Here is the playboard: 
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    3 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 5 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [PASS] gate 6  Catches a planted bug  caught 4/8 planted bug(s)
+  [PASS] gate 7  Stable                 identical verdict across 3 run(s)
+
+DELIVER ΓÇö all gates passed (evidence: 4 mutants caught, 5 lines covered)
+
+=== 4/11 sym ===
+Player 2, you are O. 
+
+
+Player 2, you are X. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are X. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are X. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are X. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are X. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are X. 
+
+
+Player 2, you are O. 
+
+
+Player 2, you are X. 
+
+
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    2 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 9 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [PASS] gate 6  Catches a planted bug  caught 4/8 planted bug(s)
+  [PASS] gate 7  Stable                 identical verdict across 3 run(s)
+
+DELIVER ΓÇö all gates passed (evidence: 4 mutants caught, 9 lines covered)
+
+=== 5/11 startGamming ===
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+Player O, it is your turn. 
+Player X, it is your turn. 
+Out of boarder. Pick another one. 
+Player O, it is your turn. 
+The square you picked is already filled. Pick another one.
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    4 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 21 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_startgamming_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6
+
+=== 6/11 isFull ===
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    3 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 49 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 2/2 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_isfull_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6
+
+=== 7/11 outOfBoard ===
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    1 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 1 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_outofboard_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6
+
+=== 8/11 printPretty ===
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+---+---+---
+X  | O | X
+---+---+---
+O  | X | O
+---+---+---
+X  | O | X
+---+---+---
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    3 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 7 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_printpretty_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6
+
+=== 9/11 isWinner ===
+Player X, you won!
+Player X, you won!
+Player X, you won!
+Player X, you won!
+Player X, you won!
+Player X, you won!
+Player X, you won!
+Player X, you won!
+Player X, you won!
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    2 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 14 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6
+
+=== 10/11 illegal ===
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    1 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 1 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_illegal_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6
+
+=== 11/11 report ===
+  [PASS] gate 1  Runs                   SUT and test parse
+  [skip] gate 2  Grounded               no KB resolver supplied ΓÇö grounding not checked (pass a KBClient, or --names on the CLI)
+  [PASS] gate 4  Checks a real value    3 assertion(s)
+  [PASS] gate 3  Calls the real code    executed 7 line(s) of the SUT
+  [PASS] gate 5  Covers the change      executed 1/1 changed line(s)
+  [FAIL] gate 6  Catches a planted bug  caught 0/8 planted bugs ΓÇö runs but verifies nothing
+         ΓåÆ fake-pass (C:\infosoft\automated_ai_platform-main\eval\examples\tictactoe_report_test.py): sabotaging the SUT output did not fail the test ΓÇö it checks nothing real (the 2025 fake-pass class)
+           fix: assert on the SUT's actual output so a wrong output is caught
+
+REPAIR/DISCARD ΓÇö failed at gate 6

@@ -23,6 +23,7 @@ yarn-error.log*
 
 # Runtime / local artifacts
 .platform_runs/
+verification_report/
 score_report.json
 score_report.html
 *.log
