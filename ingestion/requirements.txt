@@ -1,3 +1,4 @@
 pyyaml>=6.0
 psycopg2-binary>=2.9
 boto3>=1.28
+neo4j>=5.0

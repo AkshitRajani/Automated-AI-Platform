@@ -12,7 +12,8 @@ from ingestion.parsers.quad_parser import parse_quad_file, Quad
 from ingestion.parsers.resolver import Resolver
 from ingestion.writers.postgres_writer import PostgresWriter
 from ingestion.writers.embedding_writer import EmbeddingWriter
-from ingestion.graph.neptune_writer import NeptuneWriter
+from ingestion.graph.neptune_writer import NeptuneWriter  # kept for reference/rollback, no longer instantiated below
+from ingestion.graph.neo4j_writer import Neo4jWriter
 from ingestion.components.inferrer import infer_components
 from ingestion.config import load_config
 
@@ -47,7 +48,8 @@ def run_pipeline(source: str) -> dict[str, Any]:
     }
 
     pg_writer = PostgresWriter(config["postgres"])
-    neptune_writer = NeptuneWriter(config["neptune"])
+    # neptune_writer = NeptuneWriter(config["neptune"])  # replaced by Neo4j below
+    neptune_writer = Neo4jWriter(config["neo4j"])
     # Embedding writer is optional: only if a Bedrock embedding model is configured.
     embed_writer = None
     if config.get("bedrock", {}).get("embedding_model") or config.get("bedrock", {}).get("model_arn"):
@@ -100,7 +102,7 @@ def ingest_requirements(app_id: str, requirements_dir: str,
             "requirements_dir": requirements_dir}
 
 
-def _process_one_app(quad_file_path: str, app_id: str, pg: PostgresWriter, neptune: NeptuneWriter, resolver: Resolver, embed: "EmbeddingWriter | None" = None) -> str:
+def _process_one_app(quad_file_path: str, app_id: str, pg: PostgresWriter, neptune: "NeptuneWriter | Neo4jWriter", resolver: Resolver, embed: "EmbeddingWriter | None" = None) -> str:
     """Process a single quad file end-to-end. Returns the app_id actually used."""
 
     # Step 1: Parse the quad file
@@ -160,7 +162,7 @@ def _process_one_app(quad_file_path: str, app_id: str, pg: PostgresWriter, neptu
     # with the parent-row upsert and a failed load is self-healing on retry.
     # First-ever load: every delete is a harmless no-op.
     pg.delete_app(app_id)
-    neptune.delete_app(app_id)
+    neptune.delete_app(app_id)  # `neptune` now holds a Neo4jWriter instance (see run_pipeline) — same interface
 
     # The application row FIRST — param_bindings carries a foreign key to it, so
     # this order is load-bearing (issue D1: the old order failed every first-ever
@@ -176,10 +178,11 @@ def _process_one_app(quad_file_path: str, app_id: str, pg: PostgresWriter, neptu
     pg.write_quads(app_id, parsed.quads)
     logger.info(f"  Postgres: done")
 
-    # Step 6: Write to Neptune (nodes + edges)
+    # Step 6: Write to the graph store (nodes + edges) — Neo4j now, was Neptune
+    # (NeptuneWriter kept intact in neptune_writer.py for reference/rollback)
     neptune.write_nodes(app_id, parsed.entities, parsed.summary, components)
     neptune.write_edges(app_id, parsed.quads, components)
-    logger.info(f"  Neptune: done")
+    logger.info(f"  Neo4j: done")
 
     # Step 7: Embed behavioural notes -> pgvector (optional, graceful)
     if embed is not None and parsed.notes:

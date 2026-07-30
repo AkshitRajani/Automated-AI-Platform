@@ -39,10 +39,18 @@ def postgres_dsn_kwargs() -> dict:
 
 
 def neptune_settings() -> dict:
-    """Neptune connection settings for kb_graph. ``endpoint`` is empty when
+    """Neptune connection settings — kept for reference/rollback, no longer
+    called by kb_graph (see neo4j_settings below). ``endpoint`` is empty when
     Neptune is not configured — callers must degrade gracefully (slice 1 treats
     Neptune as optional)."""
     return load_config()["neptune"]
+
+
+def neo4j_settings() -> dict:
+    """Neo4j connection settings for kb_graph — replaces neptune_settings().
+    ``uri`` is empty when Neo4j is not configured — callers must degrade
+    gracefully, same optionality contract as Neptune before it."""
+    return load_config()["neo4j"]
 
 
 def bedrock_settings() -> dict:

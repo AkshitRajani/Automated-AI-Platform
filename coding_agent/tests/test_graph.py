@@ -1,11 +1,11 @@
-"""Unit tests for the Neptune graph backend — no live Neptune."""
+"""Unit tests for the graph backend — no live Neo4j (was Neptune, see graph.py)."""
 from __future__ import annotations
 
-from coding_agent.kb.graph import GraphClient, build_gremlin
+from coding_agent.kb.graph import GraphClient, build_cypher
 
 
 class FakeExecutor:
-    """Maps a node -> its outgoing edges, ignoring the gremlin string."""
+    """Maps a node -> its outgoing edges, ignoring the query string."""
     def __init__(self, edges_by_node: dict):
         self.edges_by_node = edges_by_node
         self.calls = []
@@ -75,14 +75,29 @@ def test_empty_result_has_actionable_note():
     assert "no edges" in res.note
 
 
-def test_gremlin_builder_shape():
-    q = build_gremlin("late_fee_handler", ["QUERIES_DATABASE"], "out", "DEMO", 25)
-    assert "has('app_id','DEMO')" in q
-    assert "has('name','late_fee_handler')" in q
-    assert "outE('QUERIES_DATABASE')" in q
-    assert ".limit(25)" in q
+# Gremlin builder tests — kept for reference/rollback, no longer runnable
+# (build_gremlin is commented out in graph.py, replaced by build_cypher).
+# def test_gremlin_builder_shape():
+#     q = build_gremlin("late_fee_handler", ["QUERIES_DATABASE"], "out", "DEMO", 25)
+#     assert "has('app_id','DEMO')" in q
+#     assert "has('name','late_fee_handler')" in q
+#     assert "outE('QUERIES_DATABASE')" in q
+#     assert ".limit(25)" in q
+#
+#
+# def test_gremlin_direction_in():
+#     q = build_gremlin("APP_PMT", [], "in", "DEMO", 10)
+#     assert "inE()" in q and "outV()" in q
 
 
-def test_gremlin_direction_in():
-    q = build_gremlin("APP_PMT", [], "in", "DEMO", 10)
-    assert "inE()" in q and "outV()" in q
+def test_cypher_builder_shape():
+    q = build_cypher("late_fee_handler", ["QUERIES_DATABASE"], "out", "DEMO", 25)
+    assert "app_id: $app_id" in q
+    assert "name: $node" in q
+    assert "[e:QUERIES_DATABASE]->" in q
+    assert "LIMIT 25" in q
+
+
+def test_cypher_direction_in():
+    q = build_cypher("APP_PMT", [], "in", "DEMO", 10)
+    assert "<-[e]-" in q

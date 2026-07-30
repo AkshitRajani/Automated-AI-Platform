@@ -20,6 +20,8 @@ def load_config() -> dict:
             "user": os.environ.get("PG_USER", "postgres"),
             "password": os.environ.get("PG_PASSWORD", ""),
         },
+        # Neptune — kept for reference/rollback, no longer wired up by
+        # coding_agent/kb/graph.py (replaced by "neo4j" below).
         "neptune": {
             "endpoint": os.environ.get("NEPTUNE_ENDPOINT", ""),
             "port": int(os.environ.get("NEPTUNE_PORT", "8182")),
@@ -27,6 +29,11 @@ def load_config() -> dict:
             "iam_role_arn": os.environ.get("NEPTUNE_IAM_ROLE", ""),
             # Neptune + its load bucket may live in a different region than Bedrock.
             "region": os.environ.get("NEPTUNE_REGION", os.environ.get("AWS_REGION", "us-east-1")),
+        },
+        "neo4j": {
+            "uri": os.environ.get("NEO4J_URI", "bolt://localhost:7687"),
+            "user": os.environ.get("NEO4J_USER", "neo4j"),
+            "password": os.environ.get("NEO4J_PASSWORD", ""),
         },
         "bedrock": {
             "model_arn": os.environ.get("BEDROCK_MODEL_ARN", ""),

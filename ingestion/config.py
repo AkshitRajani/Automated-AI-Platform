@@ -20,6 +20,9 @@ def load_config() -> dict:
             "user": os.environ.get("PG_USER", "postgres"),
             "password": os.environ.get("PG_PASSWORD", ""),
         },
+        # Neptune — kept for reference / rollback, no longer wired up by
+        # pipeline.py (replaced by Neo4j below, see NEO4J_REPLACES_NEPTUNE
+        # notes in pipeline.py). Left intact, not deleted.
         "neptune": {
             "endpoint": os.environ.get("NEPTUNE_ENDPOINT", ""),
             "port": int(os.environ.get("NEPTUNE_PORT", "8182")),
@@ -30,6 +33,13 @@ def load_config() -> dict:
             "iam_role_arn": os.environ.get("NEPTUNE_IAM_ROLE", ""),
             # Neptune + its load bucket may live in a different region than Bedrock.
             "region": os.environ.get("NEPTUNE_REGION", os.environ.get("AWS_REGION", "us-east-1")),
+        },
+        # Neo4j — the active graph store. Local Community Edition via Docker
+        # (docker-compose.local.yml), no AWS account needed.
+        "neo4j": {
+            "uri": os.environ.get("NEO4J_URI", "bolt://localhost:7687"),
+            "user": os.environ.get("NEO4J_USER", "neo4j"),
+            "password": os.environ.get("NEO4J_PASSWORD", ""),
         },
         "bedrock": {
             "model_arn": os.environ.get("BEDROCK_MODEL_ARN", ""),

@@ -50,23 +50,49 @@ class GraphResult(BaseModel):
     note: Optional[str] = None
 
 
-def build_gremlin(node: str, relations: List[str], direction: Direction,
-                  app_id: str, limit: int) -> str:
-    """Build a single-hop Gremlin query that returns projected edges.
+# --- Gremlin/Neptune query builder — kept for reference/rollback, no longer
+# wired up by GraphClient.from_env() below (replaced by build_cypher/Neo4j).
+# def build_gremlin(node: str, relations: List[str], direction: Direction,
+#                   app_id: str, limit: int) -> str:
+#     """Build a single-hop Gremlin query that returns projected edges.
+#
+#     Matched-by ``name`` + ``app_id`` (the writer stores both as vertex
+#     properties). All values are passed as literals here for the query *string*;
+#     the boto client sends them as the query body (Neptune has no SQL-style
+#     injection surface, and ``app_id``/``name`` are internal canonical tokens).
+#     """
+#     step = {"out": "outE", "in": "inE", "both": "bothE"}[direction]
+#     vstep = {"out": "inV", "in": "outV", "both": "otherV"}[direction]
+#     rel_args = ",".join(f"'{r}'" for r in relations) if relations else ""
+#     return (
+#         f"g.V().has('app_id','{app_id}').has('name','{node}')"
+#         f".{step}({rel_args}).as('e').{vstep}().as('v')"
+#         f".select('e','v').by(label).by(valueMap('name'))"
+#         f".limit({limit})"
+#     )
 
-    Matched-by ``name`` + ``app_id`` (the writer stores both as vertex
-    properties). All values are passed as literals here for the query *string*;
-    the boto client sends them as the query body (Neptune has no SQL-style
-    injection surface, and ``app_id``/``name`` are internal canonical tokens).
+
+def build_cypher(node: str, relations: List[str], direction: Direction,
+                 app_id: str, limit: int) -> str:
+    """Build a single-hop Cypher query that returns projected edges — the
+    Neo4j equivalent of the Gremlin builder above. Matched by ``name`` +
+    ``app_id`` (Neo4jWriter stores both as node properties, same scheme).
+    ``app_id``/``node`` are internal canonical tokens (never user-supplied
+    text), same trust boundary as the Gremlin version — still passed as
+    parameters here rather than string-interpolated, for defense in depth.
     """
-    step = {"out": "outE", "in": "inE", "both": "bothE"}[direction]
-    vstep = {"out": "inV", "in": "outV", "both": "otherV"}[direction]
-    rel_args = ",".join(f"'{r}'" for r in relations) if relations else ""
+    pattern = {
+        "out": "(s)-[e]->(v)",
+        "in": "(s)<-[e]-(v)",
+        "both": "(s)-[e]-(v)",
+    }[direction]
+    rel_filter = ""
+    if relations:
+        rel_filter = ":" + "|".join(relations)
+        pattern = pattern.replace("[e]", f"[e{rel_filter}]")
     return (
-        f"g.V().has('app_id','{app_id}').has('name','{node}')"
-        f".{step}({rel_args}).as('e').{vstep}().as('v')"
-        f".select('e','v').by(label).by(valueMap('name'))"
-        f".limit({limit})"
+        f"MATCH {pattern.replace('(s)', '(s {app_id: $app_id, name: $node})')} "
+        f"RETURN type(e) AS e, v.name AS name LIMIT {int(limit)}"
     )
 
 
@@ -77,35 +103,78 @@ class GremlinExecutor(Protocol):
                 app_id: str, limit: int) -> List[dict]: ...
 
 
-class _NeptuneExecutor:
-    """Live executor over Neptune via boto3 ``neptunedata`` (Gremlin)."""
+# --- Neptune executor — kept for reference/rollback, no longer instantiated
+# by GraphClient.from_env() below (replaced by _Neo4jExecutor).
+# class _NeptuneExecutor:
+#     """Live executor over Neptune via boto3 ``neptunedata`` (Gremlin)."""
+#
+#     def __init__(self, settings: dict):
+#         self._settings = settings
+#
+#     def one_hop(self, node, relations, direction, app_id, limit) -> List[dict]:
+#         import boto3  # lazy — only when Neptune is actually configured
+#         gremlin = build_gremlin(node, relations, direction, app_id, limit)
+#         client = boto3.client(
+#             "neptunedata",
+#             endpoint_url=f"https://{self._settings['endpoint']}:{self._settings['port']}",
+#             region_name=self._settings.get("region", "us-east-1"),
+#         )
+#         raw = client.execute_gremlin_query(gremlinQuery=gremlin)
+#         return _parse_neptune_result(node, direction, raw)
+#
+#
+# def _parse_neptune_result(node: str, direction: Direction, raw: dict) -> List[dict]:
+#     """Normalize Neptune's ``execute_gremlin_query`` payload to edge dicts.
+#     Defensive: shape varies, so unknown payloads yield no edges rather than raise."""
+#     out: List[dict] = []
+#     data = (raw or {}).get("result", {}).get("data", [])
+#     for item in data:
+#         try:
+#             relation = item.get("e")
+#             v = item.get("v", {})
+#             name = v.get("name")
+#             dst = name[0] if isinstance(name, list) else name
+#             if relation and dst:
+#                 out.append({"src": node, "relation": str(relation),
+#                             "dst": str(dst), "dst_kind": ""})
+#         except Exception:
+#             continue
+#     return out
+
+
+class _Neo4jExecutor:
+    """Live executor over Neo4j via the official ``neo4j`` driver (Cypher).
+    Replaces ``_NeptuneExecutor`` — same one-hop interface, no AWS involved."""
 
     def __init__(self, settings: dict):
         self._settings = settings
+        self._driver = None
+
+    def _get_driver(self):
+        if self._driver is None:
+            from neo4j import GraphDatabase  # lazy — only when Neo4j is actually configured
+            self._driver = GraphDatabase.driver(
+                self._settings["uri"],
+                auth=(self._settings.get("user", "neo4j"), self._settings.get("password", "")),
+            )
+        return self._driver
 
     def one_hop(self, node, relations, direction, app_id, limit) -> List[dict]:
-        import boto3  # lazy — only when Neptune is actually configured
-        gremlin = build_gremlin(node, relations, direction, app_id, limit)
-        client = boto3.client(
-            "neptunedata",
-            endpoint_url=f"https://{self._settings['endpoint']}:{self._settings['port']}",
-            region_name=self._settings.get("region", "us-east-1"),
-        )
-        raw = client.execute_gremlin_query(gremlinQuery=gremlin)
-        return _parse_neptune_result(node, direction, raw)
+        cypher = build_cypher(node, relations, direction, app_id, limit)
+        driver = self._get_driver()
+        with driver.session() as session:
+            raw = session.run(cypher, app_id=app_id, node=node).data()
+        return _parse_neo4j_result(node, raw)
 
 
-def _parse_neptune_result(node: str, direction: Direction, raw: dict) -> List[dict]:
-    """Normalize Neptune's ``execute_gremlin_query`` payload to edge dicts.
-    Defensive: shape varies, so unknown payloads yield no edges rather than raise."""
+def _parse_neo4j_result(node: str, raw: List[dict]) -> List[dict]:
+    """Normalize Neo4j's ``session.run(...).data()`` rows to edge dicts.
+    Defensive: shape varies, so unknown rows yield no edges rather than raise."""
     out: List[dict] = []
-    data = (raw or {}).get("result", {}).get("data", [])
-    for item in data:
+    for row in raw or []:
         try:
-            relation = item.get("e")
-            v = item.get("v", {})
-            name = v.get("name")
-            dst = name[0] if isinstance(name, list) else name
+            relation = row.get("e")
+            dst = row.get("name")
             if relation and dst:
                 out.append({"src": node, "relation": str(relation),
                             "dst": str(dst), "dst_kind": ""})
@@ -123,11 +192,17 @@ class GraphClient:
 
     @classmethod
     def from_env(cls) -> "GraphClient":
-        from coding_agent.config import neptune_settings
-        s = neptune_settings()
-        if not s.get("endpoint"):
+        # Neptune wiring — kept for reference/rollback, no longer active:
+        # from coding_agent.config import neptune_settings
+        # s = neptune_settings()
+        # if not s.get("endpoint"):
+        #     return cls(executor=None, available=False)
+        # return cls(executor=_NeptuneExecutor(s), available=True)
+        from coding_agent.config import neo4j_settings
+        s = neo4j_settings()
+        if not s.get("uri"):
             return cls(executor=None, available=False)
-        return cls(executor=_NeptuneExecutor(s), available=True)
+        return cls(executor=_Neo4jExecutor(s), available=True)
 
     def walk(self, start: str, relations: Optional[List[str]] = None, hops: int = 1,
              direction: Direction = "out", app_id: str = "", limit: int = 25) -> GraphResult:
